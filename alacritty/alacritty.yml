@@ -1,0 +1,37 @@
+live_config_reload: true
+
+shell:
+  program: /opt/homebrew/bin/fish
+  args:
+    - -c
+    - "tmux a || tmux"
+
+window:
+  opacity: 1
+  padding:
+    x: 5
+    y: 0
+  dimensions:
+    columns: 120
+    lines: 40
+  dynamic_padding: false
+  decorations: buttonless
+  option_as_alt: Both
+
+font:
+  normal:
+    family: "Hack Nerd Font"
+    style: Regular
+  size: 13
+  offset:
+    y: 3
+    x: 1
+
+env:
+  TERM: screen-256color
+
+selections:
+  save_to_clipboard: true
+
+import:
+  - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
