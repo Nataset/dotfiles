@@ -1,0 +1,48 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.1",
+  "schemes" : [
+    {
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.6044,
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "Logi M750 L",
+          "serialNumber" : "ABE7E1C1",
+          "productID" : "0xb02c",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "speed" : 0,
+        "acceleration" : {
+          "horizontal" : 1,
+          "vertical" : 0.7
+        },
+        "reverse" : true,
+        "distance" : {
+          "horizontal" : "128px",
+          "vertical" : "auto"
+        }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "productID" : "0x341",
+          "category" : "trackpad",
+          "vendorID" : "0x5ac"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        }
+      }
+    }
+  ]
+}
