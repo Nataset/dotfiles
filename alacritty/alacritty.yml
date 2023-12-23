@@ -9,8 +9,8 @@ shell:
 window:
   opacity: 0.95
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 0
   dimensions:
     columns: 120
     lines: 40
@@ -22,7 +22,7 @@ font:
   normal:
     family: "Hack Nerd Font"
     style: Regular
-  size: 12.5
+  size: 13
   offset:
     y: 3
     x: 1
@@ -33,6 +33,5 @@ env:
 selections:
   save_to_clipboard: true
 
-# theme
 import:
   - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
