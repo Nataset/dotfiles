@@ -12,6 +12,7 @@ set -x PATH $PATH /opt/homebrew/bin
 set -x PATH $PATH $HOME/.rover/bin
 set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH $HOME/.rd/bin
+set -x PATH $PATH $HOME/Library/Python/3.9/bin
 
 # set ENV
 set -Ux EDITOR nvim
