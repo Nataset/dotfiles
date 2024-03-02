@@ -50,8 +50,8 @@ return {
             local builtin = require("telescope.builtin")
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
             vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
             vim.keymap.set("n", "gr", builtin.lsp_references, {})
             vim.keymap.set("n", "<leader>cm", vim.diagnostic.open_float, {})
@@ -63,7 +63,6 @@ return {
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
             vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
             vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, {})
-            vim.keymap.set("n", "<C-h>", vim.lsp.buf.signature_help, {})
             -- vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, { expr = true })
         end,
     },
