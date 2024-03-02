@@ -1,0 +1,34 @@
+[include]
+    path = /pleum.nataset/.config/delta/themes.gitconfig
+
+[core]
+	excludesfile = /Users/pleum.nataset/.gitignore_global
+	pager = delta
+[user]
+	name = Nataset 'Pleum' Tanabodee
+	email = pleum.nataset@bitkub.com
+[commit]
+	template = /Users/pleum.nataset/.stCommitMsg
+# [pager]
+    # diff = less -FX
+[alias]
+    lg = log --graph --all --date-order --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lgs = log --graph --all --date-order -n 10 --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[pull]
+	rebase = false
+[credential]
+	helper = cache
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    line-numbers = true
+    navigate = true    # use n and N to move between diff sections
+    dark = true
+    features = gruvmax-fang
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

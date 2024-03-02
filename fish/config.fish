@@ -17,6 +17,7 @@ set -x PATH $PATH $HOME/Library/Python/3.9/bin
 # set ENV
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
+set -Ux GIT_EDITOR nvim
 
 
 # fnm init
@@ -34,7 +35,9 @@ if type -q exa
     alias lla "ll -a"
 end
 
-alias vim nvim
+alias vim "nvim --listen /tmp/nvim-server.pipe"
+alias nvim "nvim --listen /tmp/nvim-server.pipe"
+alias lg lazygit
 
 # fzf
 fzf_configure_bindings --directory=\co
