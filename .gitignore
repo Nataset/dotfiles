@@ -2,3 +2,4 @@
 nvim/lazy-lock.json
 git/config
 lazygit/state.yml
+fish/fish_variables
