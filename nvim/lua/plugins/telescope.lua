@@ -8,9 +8,9 @@ return {
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
-                config = function()
-                    require("telescope").load_extension("fzf")
-                end,
+            },
+            {
+                "nvim-telescope/telescope-ui-select.nvim",
             },
         },
         keys = {
@@ -59,6 +59,17 @@ return {
                     },
                 },
             },
+            extensions = {
+                -- ["ui-select"] = {
+                --     require("telescope.themes").get_dropdown({}),
+                -- },
+                fzf = {
+                    fuzzy = true,
+                    override_generic_sorter = true, -- override the generic sorter
+                    override_file_sorter = true,    -- override the file sorter
+                    case_mode = "smart_case",
+                }
+            },
         },
         config = function(_, opts)
             local builtin = require("telescope.builtin")
@@ -93,19 +104,8 @@ return {
             vim.keymap.set("n", "sg", builtin.git_files, {})
 
             require("telescope").setup(opts)
-        end,
-    },
-    {
-        "nvim-telescope/telescope-ui-select.nvim",
-        config = function()
-            require("telescope").setup({
-                extensions = {
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({}),
-                    },
-                },
-            })
             require("telescope").load_extension("ui-select")
+            require("telescope").load_extension("fzf")
         end,
     },
 }

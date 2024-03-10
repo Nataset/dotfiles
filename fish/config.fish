@@ -6,13 +6,7 @@ set fish_greeting
 # set $PATH
 set -x PATH $PATH /usr/local/bin
 set -x PATH $PATH $HOME/.local/bin
-
-set -x PATH $PATH /opt/homebrew/bin
-
-set -x PATH $PATH $HOME/.rover/bin
 set -x PATH $PATH $HOME/.cargo/bin
-set -x PATH $PATH $HOME/.rd/bin
-set -x PATH $PATH $HOME/Library/Python/3.9/bin
 
 # set ENV
 set -Ux EDITOR nvim
@@ -22,7 +16,8 @@ set -Ux VISUAL nvim
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 
 # fnm init
-fnm env --use-on-cd | source
+set -x PATH "/home/nataset/.local/share/fnm" $PATH
+  fnm env | source
 
 # zoxide init
 zoxide init fish | source
