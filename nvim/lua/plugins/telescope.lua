@@ -54,7 +54,7 @@ return {
                     previewer = true,
                     mappings = {
                         i = {
-                            ["<c-x>"] = "delete_buffer",
+                            ["<c-d>"] = "delete_buffer",
                         },
                     },
                 },
@@ -88,6 +88,7 @@ return {
             vim.keymap.set("n", "sR", builtin.grep_string, {})
             vim.keymap.set("n", "s,", builtin.buffers, {})
             vim.keymap.set("n", "ss", builtin.lsp_document_symbols, {})
+            vim.keymap.set("n", "sS", builtin.lsp_workspace_symbols, {})
             vim.keymap.set("n", "s;", builtin.resume, {})
             vim.keymap.set("n", "sh", builtin.help_tags, {})
             vim.keymap.set("n", "sg", builtin.git_files, {})

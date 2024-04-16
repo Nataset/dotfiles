@@ -39,8 +39,9 @@ end
 # alias vim "nvim --listen /tmp/nvim-server.pipe"
 # alias nvim "nvim --listen /tmp/nvim-server.pipe"
 alias lg lazygit
-alias nvim="nvim --listen /tmp/nvim-server-$(tmux display-message -p '#S').pipe"
-alias vim="nvim --listen /tmp/nvim-server-$(tmux display-message -p '#S').pipe"
+alias vim="nvim"
+# alias vim="nvim --listen /tmp/nvim-server-$(tmux display-message -p '#S').pipe"
+# alias Nvim="nvim --listen /tmp/nvim-server-$(tmux display-message -p '#S').pipe"
 
 # fzf
 fzf_configure_bindings --directory=\co

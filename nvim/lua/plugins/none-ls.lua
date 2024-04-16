@@ -17,8 +17,10 @@ return {
 				null_ls.builtins.code_actions.impl,
 				null_ls.builtins.diagnostics.erb_lint,
 				null_ls.builtins.diagnostics.eslint_d,
-				null_ls.builtins.diagnostics.misspell,
+				null_ls.builtins.diagnostics.codespell,
+				null_ls.builtins.formatting.codespell,
 				null_ls.builtins.formatting.phpcsfixer,
+				null_ls.builtins.diagnostics.golangci_lint,
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then

@@ -4,8 +4,8 @@ os:
   # editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
   # edit: 'nvim --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
   # editInTerminal: true
-  edit: nvim --server /tmp/nvim-server-$(tmux display-message -p '#S').pipe --remote-send "<cmd>lua require('scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
-  open: nvim --server /tmp/nvim-server-$(tmux display-message -p '#S').pipe --remote-send "<cmd>lua require('scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
+  # edit: nvim --server /tmp/nvim-server-$(tmux display-message -p '#S').pipe --remote-send "<cmd>lua require('scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
+  # open: nvim --server /tmp/nvim-server-$(tmux display-message -p '#S').pipe --remote-send "<cmd>lua require('scripts.lazygit-open-file')('{{filename}}', '{{line}}')<CR>"
 
 git:
   paging:
