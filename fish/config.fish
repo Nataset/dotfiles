@@ -17,6 +17,7 @@ set -x PATH $PATH $HOME/Library/Python/3.9/bin
 # set ENV
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
+set -Ux HOMEBREW_NO_AUTO_UPDATE 1
 # set -Ux GIT_EDITOR nvim
 
 set -Ux XDG_CONFIG_HOME "$HOME/.config"

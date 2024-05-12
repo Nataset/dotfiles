@@ -1,5 +1,6 @@
 return {
 	"rmagatti/auto-session",
+	enabled = false,
 	config = function()
 		vim.keymap.set("n", "sv", require("auto-session.session-lens").search_session, {
 			noremap = true,
