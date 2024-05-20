@@ -1,7 +1,6 @@
 return {
     {
         "williamboman/mason.nvim",
-        lazy = false,
         config = function()
             require("mason").setup()
         end,
@@ -18,12 +17,12 @@ return {
                 "rust_analyzer",
                 "html",
                 "phpactor",
+                "intelephense",
             },
         },
     },
     {
         "neovim/nvim-lspconfig",
-        lazy = false,
         config = function()
             local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -43,7 +42,10 @@ return {
             lspconfig.rust_analyzer.setup({
                 capabilities = capabilities,
             })
-            lspconfig.phpactor.setup({
+            -- lspconfig.phpactor.setup({
+            --     capabilities = capabilities,
+            -- })
+            lspconfig.intelephense.setup({
                 capabilities = capabilities,
             })
 
@@ -54,6 +56,7 @@ return {
             vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
             vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
             vim.keymap.set("n", "gr", builtin.lsp_references, {})
+            vim.keymap.set("n", "gR", vim.lsp.buf.references, {})
             vim.keymap.set("n", "<leader>cm", vim.diagnostic.open_float, {})
 
             vim.keymap.set("n", "<leader>cd", builtin.diagnostics, {})
