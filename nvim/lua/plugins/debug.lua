@@ -2,7 +2,8 @@ return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
 		{
-			-- "leoluz/nvim-dap-go",
+			"leoluz/nvim-dap-go",
+			enabled = true,
 			config = true,
 		},
 		{
@@ -25,7 +26,34 @@ return {
 				},
 			},
 
-			opts = {},
+			opts = {
+				layouts = {
+					{
+						elements = {
+							{
+								id = "scopes",
+								size = 0.5,
+							},
+							{
+								id = "breakpoints",
+								size = 0.5,
+							},
+						},
+						position = "left",
+						size = 50,
+					},
+					{
+						elements = {
+							{
+								id = "repl",
+								size = 1,
+							},
+						},
+						position = "bottom",
+						size = 15,
+					},
+				},
+			},
 			config = function(_, opts)
 				local dap = require("dap")
 				local dapui = require("dapui")
@@ -47,6 +75,7 @@ return {
 		},
 		"nvim-neotest/nvim-nio",
 		"nvim-lua/plenary.nvim",
+		"theHamsta/nvim-dap-virtual-text",
 	},
 	config = function()
 		local dap = require("dap")
@@ -107,20 +136,22 @@ return {
 					end
 
 					for line in io.lines(filePath) do
-						local words = {}
+						if not line:match("^%s*#") then
+							local key, value = line:match("([^=]*)=(.*)")
 
-						for word in string.gmatch(line, "[^=]+") do
-							table.insert(words, word)
-						end
+							if not final_config.env then
+								final_config.env = {}
+							end
 
-						if not final_config.env then
-							final_config.env = {}
-						end
-
-						if words[1] ~= nil then
-							final_config.env[words[1]] = words[2]
+							if key ~= nil and value ~= nil then
+								final_config.env[key] = value
+							end
 						end
 					end
+				end
+
+				for key, value in pairs(final_config.env) do
+					print(key, value)
 				end
 
 				on_config(final_config)
