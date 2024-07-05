@@ -83,7 +83,9 @@ return {
 		vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, {})
 		vim.keymap.set("n", "<Leader>dc", dap.continue, {})
 
-		require("dap.ext.vscode").load_launchjs()
+		if vim.fn.filereadable(".vscode/launch.json") then
+			require("dap.ext.vscode").load_launchjs()
+		end
 
 		dap.adapters.go = {
 			type = "server",
@@ -93,6 +95,8 @@ return {
 				args = { "dap", "-l", "127.0.0.1:38697" },
 			},
 			enrich_config = function(finalConfig, on_config)
+				local launchPath = (vim.fn.getcwd())
+
 				local final_config = vim.deepcopy(finalConfig)
 
 				-- Placeholder expansion for launch directives
@@ -148,10 +152,6 @@ return {
 							end
 						end
 					end
-				end
-
-				for key, value in pairs(final_config.env) do
-					print(key, value)
 				end
 
 				on_config(final_config)

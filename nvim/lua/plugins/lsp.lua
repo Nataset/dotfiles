@@ -78,6 +78,9 @@ return {
 			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
 			vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, {})
 			-- vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, { expr = true })
+
+			-- keymap for restart lsp
+			vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", {})
 		end,
 	},
 }

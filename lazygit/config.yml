@@ -1,5 +1,7 @@
 # ~/.config/jesseduffield/lazygit/config.yml
 os:
+  editPreset: "nvim-remote"
+
   # editCommand: "nvim"
   # editCommandTemplate: '{{editor}} --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
   # edit: 'nvim --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'
