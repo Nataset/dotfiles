@@ -1,0 +1,27 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "vendorID" : "0xbda",
+          "productName" : "G3 Mouse 8K",
+          "serialNumber" : "0123456789",
+          "category" : "mouse",
+          "productID" : "0x4762"
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        },
+        "acceleration" : {
+          "vertical" : 1
+        }
+      }
+    }
+  ]
+}

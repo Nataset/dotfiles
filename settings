@@ -1,0 +1,6 @@
+{
+  "enable-web": false,
+  "enable-macos-desktop": false,
+  "enable-linux-desktop": false,
+  "enable-windows-desktop": false
+}

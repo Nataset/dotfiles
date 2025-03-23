@@ -1,0 +1,16 @@
+theme = Gruvbox Dark
+
+# Primary font (Nerd Font patched, includes icons), with fallbacks:
+# extra icon coverage, then Thai script
+# font-family = MesloLGS NF
+# font-family = Symbols Nerd Font Mono
+# font-family = Jetbrains Mono
+# font-family = Sarabun
+font-size = 20
+
+# window-decoration = none
+window-subtitle = false
+title = " "
+background-opacity = 0.95
+
+macos-option-as-alt = true

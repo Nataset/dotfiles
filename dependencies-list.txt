@@ -1,0 +1,31 @@
+tool
+	- terminal = ghostty
+	- package_manager = homebrew
+	- shell = zsh
+	- shell-package_manager = oh-my-zsh
+	- shell-prompt = startship 
+	- editor = neovim (lazyvim)
+
+oh-my-zsh-plugin
+	- zsh-autosuggestions
+	- zsh-syntax-highlight
+	- zsh-vi-mode
+
+util
+	- zoxide (cd with cache)
+	- fzf (search thing)
+	- bat (for fzf preview) # TODO
+	- mpv (vdo player)
+	- yazi (file explorer)
+	- lazygit (git client)
+
+	dependencis 
+		- fd (find file)
+		- rg (rust grep)
+
+language-manager
+	- gvm (go-version-manager)
+	- fnm (fast-node-manager)
+		- pnpm (performance node package manager)
+
+

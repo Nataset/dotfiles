@@ -1,0 +1,73 @@
+# load homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# start tmux if not yet in tmux-session
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux a || tmux new-session 
+fi
+
+# load oh-my-zsh
+export ZSH="$HOME/.config/zsh/oh-my-zsh"
+ZSH_THEME="" # using startship as propmot
+plugins=(
+    evalcache
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    zsh-vi-mode 
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+# env
+export XDG_CONFIG_HOME="${HOME}/.config"
+export EDITOR=nvim
+export BAT_THEME=gruvbox-dark
+export TERM=xterm-256color
+export DISABLE_AUTO_UPDATE="true"
+export ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+export PNPM_HOME="${HOME}/Users/pleum.nataset/Library/pnpm"
+
+# set history file
+export HISTFILE=~/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=100000
+
+setopt INC_APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_ALL_DUPS
+
+# add path
+export PATH="${HOME}/.rd/bin:$PATH"
+export PATH="$PNPM_HOME:$PATH"
+export PATH="${HOME}/.local/share/nvim/mason/bin:$PATH"
+export PATH="${HOME}/.local/bin:$PATH"
+export PATH="$HOME/.asdf/shims:$PATH"
+# export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH
+
+# alias 
+alias vim=nvim
+alias lg=lazygit
+
+# load dependencies script
+# eval "$(starship init zsh)"
+# eval "$(zoxide init zsh)"
+# eval "$(fnm env --use-on-cd --shell zsh)"
+# eval "$(cat ${HOME}/.gvm/scripts/gvm)"
+
+# load with evalcache zsh plugins to speed up the startup time
+_evalcache starship init zsh
+_evalcache fnm env --use-on-cd --shell zsh
+_evalcache zoxide init zsh
+_evalcache cat ${HOME}/.gvm/scripts/gvm
+
+
+# load custom function
+#  y from yazi function
+source "${HOME}/.config/zsh/function/yazi.zsh"
+
+# setup widget
+# - ctrl + e to open yazi
+# - ctrl + t to fzf file name
+# - ctrl + r to fzf command history
+# - alt  + c to cd to dir
+source "${HOME}/.config/zsh/widget/setup-widget.zsh"
